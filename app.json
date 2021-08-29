@@ -1,0 +1,17 @@
+{
+  "name": "Asset Management",
+  "displayName": "Asset Management",
+  "expo": {
+    "name": "Asset Management",
+    "slug": "nova-asset-management",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "backgroundColor": "#4682B4"
+    },
+    "description": "Responsive Asset Management App using Expo, JavaScript and React Native"
+  }
+}
