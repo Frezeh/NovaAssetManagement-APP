@@ -1,24 +1,24 @@
-import React from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
+import React from "react";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
 const styles = StyleSheet.create({
-    loadingView: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      flex: 1
-    },
-    loadingText: {
-      color: '#4682B4',
-      fontSize: 14,
-      fontWeight: 'bold'
-    }
+  loadingView: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+  },
+  loadingText: {
+    color: "#4682B4",
+    fontSize: 14,
+    fontWeight: "bold",
+  },
 });
 
 export const Loading = () => {
-    return(
-        <View style={styles.loadingView} >
-            <ActivityIndicator size="large" color="#4682B4" />
-            <Text style={styles.loadingText} >Loading . . .</Text>
-        </View>
-    );
-}
+  return (
+    <View style={styles.loadingView}>
+      <ActivityIndicator size="large" color="#4682B4" />
+      <Text style={styles.loadingText}>Loading . . .</Text>
+    </View>
+  );
+};
