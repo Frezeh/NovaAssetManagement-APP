@@ -130,6 +130,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginBottom: 20,
     borderRadius: 24,
+    borderWidth: 2,
+    borderColor: "#f3f8ff"
   },
   transparentText: {
     textTransform: "uppercase",
