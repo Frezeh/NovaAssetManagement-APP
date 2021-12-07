@@ -2,7 +2,7 @@
 Responsive Asset Management App using Expo, JavaScript and React Native
 <br />
 
-Project Title
+Project Title:
 <br />
 NOVA Asset Management Demo
 <br />
@@ -14,111 +14,94 @@ https://expo.io/@frezeh/nova-asset-management
 
 Table of Content:
 <br />
-
 About The App
 <br />
-
 Screenshots
 <br />
-
 Technologies
 <br />
-
 Setup
 <br />
-
 Status
 <br />
-
 Credits
 <br />
-
 License
 <br />
 
-About The App
+About The App:
 <br />
-
 [Responsive Asset Management App using Expo, JavaScript and React Native]
 <br />
 
-Landing page
+Screenshots:
 <br />
 
-Screenshots
-<br />
-
-Landing page
+1. Landing page
 <br />
 
 ![Alt text](/assets/images/landingPage.png?raw=true "Landing page")
 <br />
 
-Login page
+2. Login page
 <br />
 
 ![Alt text](/assets/images/loginScreen.png?raw=true "Login page")
 <br />
 
-Register page
+3. Register page
 <br />
 
 ![Alt text](/assets/images/registerScreen.png?raw=true "Register page")
 
-Overview page
+4. Overview page
 <br />
 
 ![Alt text](/assets/images/OverviewScreen.png?raw=true "Overview page")
 <br />
 
-Dashboard page
+5. Dashboard page
 <br />
 
 ![Alt text](/assets/images/DashboardScreen.png?raw=true "Dashboard page")
 
 <br />
 
-Product page
+6. Product page
 <br />
 
 ![Alt text](/assets/images/ProductScreen.png?raw=true "Product page")
 
 <br />
 
-Drawer page
+7. Drawer page
 <br />
 
 ![Alt text](/assets/images/DrawerScreen.png?raw=true "Drawer page")
 
 <br />
 
-Technologies
+Technologies:
 <br />
-
 React-Native, React Navigation, Redux, Expo, Google-fonts.
 
-Setup
+Setup:
 <br />
 
-. Download or clone the repository
+1. Download or clone the repository
 <br />
 
-. run npm install
+2. run npm install
 <br />
 
-. Test credentials- 
-<br />
--Username: Admin 
-<br />
--Password: password
+3. Test credentials- Username: Admin Password: password
 <br />
 
-. Make transactions
+4. Make transactions
 <br />
 
-Status
+Status:
 <br />
-
 [Asset Mnagement Version 1 Demo].
 <br />
 
@@ -127,10 +110,9 @@ Credits
 
 List of contriubutors:
 <br />
-
 Frank Ezeh
 <br />
 
-License<br />
-
+License
+<br />
 MIT license @ author
