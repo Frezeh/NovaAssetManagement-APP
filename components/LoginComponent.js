@@ -28,24 +28,11 @@ export default function Login() {
   const [showPass, setShowPass] = useState(true);
   const [loadingVisible, setLoadingVisible] = useState(false);
 
-  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const creds = { username: username, password: password };
 
-  const handleLogin = (event) => {
-    loginAuth();
-    //dispatch(loginUser(creds));
-  };
-
-  const toggleRemember = () => {
-    setRemember(!remember);
-  };
-
-  const toggleShowPass = () => {
-    setShowPass(!showPass);
-  };
-
-  const loginAuth = () => {
+  const handleLogin = () => {  
+    // dispatch(loginUser(creds));
     setLoadingVisible(!loadingVisible);
 
     dispatch(requestLogin(creds));
@@ -100,6 +87,14 @@ export default function Login() {
           dispatch(loginError(error.message));
         })
     );
+  };
+
+  const toggleRemember = () => {
+    setRemember(!remember);
+  };
+
+  const toggleShowPass = () => {
+    setShowPass(!showPass);
   };
 
   return (
