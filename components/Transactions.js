@@ -14,13 +14,7 @@ import { useSelector, useDispatch } from "react-redux";
 import AppLoading from "expo-app-loading";
 import { useFonts, Ubuntu_400Regular } from "@expo-google-fonts/ubuntu";
 import { Loading } from "./LoadingComponent";
-import {
-  addUser,
-  userFailed,
-  userLoading,
-  addHistory,
-} from "../redux/ActionCreators";
-import { baseUrl } from "../shared/baseUrl";
+import { fetchUser } from "../redux/ActionCreators";
 
 const wait = (timeout) => {
   return new Promise((resolve) => setTimeout(resolve, timeout));
@@ -28,7 +22,9 @@ const wait = (timeout) => {
 
 export default function Transactions({ navigation }) {
   useEffect(() => {
-    User();
+    let id = auth.id;
+    dispatch(fetchUser(id));
+
   }, []);
 
   const dispatch = useDispatch();
@@ -43,36 +39,6 @@ export default function Transactions({ navigation }) {
     setRefreshing(true);
     wait(2000).then(() => setRefreshing(false));
   }, []);
-
-  const User = () => {
-    let adress = `${auth.id}`;
-    dispatch(userLoading());
-
-    return fetch(baseUrl + `users/${adress}`)
-      .then(
-        (response) => {
-          if (response.ok) {
-            return response;
-          } else {
-            var error = new Error(
-              "Error " + response.status + ": " + response.statusText
-            );
-            error.response = response;
-            throw error;
-          }
-        },
-        (error) => {
-          var errmess = new Error(error.message);
-          throw errmess;
-        }
-      )
-      .then((response) => response.json())
-      .then((user) => {
-        dispatch(addUser(user));
-        dispatch(addHistory(user));
-      })
-      .catch((error) => dispatch(userFailed(error.message)));
-  };
 
   const styles = StyleSheet.create({
     overview: {
@@ -126,7 +92,7 @@ export default function Transactions({ navigation }) {
             >
               <Animatable.View animation="fadeInRightBig" duration={2000}>
                 <SafeAreaView style={{ flex: 1 }}>
-                  <ScrollView style={{ flex: 1 }}>
+                  <ScrollView>
                     <Card
                       style={{
                         backgroundColor: "#4682B4",
@@ -137,12 +103,16 @@ export default function Transactions({ navigation }) {
                         borderColor: "#ddd",
                       }}
                     >
-                      <View style={{ flexDirection: "row" }}>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                        }}
+                      >
                         <View style={{ flex: 1 }}>
                           <Image
                             source={require("../assets/images/profile.png")}
                             style={{
-                              alignSelf: "flex-start",
                               marginTop: 5,
                               marginLeft: 10,
                               width: 120,
@@ -151,11 +121,10 @@ export default function Transactions({ navigation }) {
                             }}
                           />
                         </View>
-                        <View style={{ flex: 2 }}>
+                        <View style={{ flex: 1.5 }}>
                           <Text
                             style={{
                               paddingHorizontal: 30,
-                              alignSelf: "flex-end",
                               marginTop: 15,
                               marginLeft: 30,
                               color: "#fff",

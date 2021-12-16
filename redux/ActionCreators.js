@@ -622,10 +622,10 @@ export const postFeedback = (values) => (dispatch) => {
     );
 };
 
-export const fetchUser = () => (dispatch) => {
+export const fetchUser = (id) => (dispatch) => {
   dispatch(userLoading());
 
-  return fetch(baseUrl + "users/5f1d245ce1bd492204f54fb1")
+  return fetch(baseUrl + `users/${id}`)
     .then(
       (response) => {
         if (response.ok) {
