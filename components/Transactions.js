@@ -20,7 +20,7 @@ const wait = (timeout) => {
   return new Promise((resolve) => setTimeout(resolve, timeout));
 };
 
-export default function Transactions({ navigation }) {
+export default function Transactions() {
   useEffect(() => {
     let id = auth.id;
     dispatch(fetchUser(id));
